@@ -1,0 +1,45 @@
+<head>
+  <meta charset="utf-8">
+  <title>Search Keywordsd Database</title>
+  <style>
+    #customers {
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #customers tr:hover {background-color: #ddd;}
+    
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #4CAF50;
+      color: white;
+    }
+    </style>
+</head>
+<body>
+    <h2 style="color: #4CAF50;">Search Keywords Collection</h2>
+    <table id="customers">
+      <tr>
+        <th>Client Ip</th>
+        <th>Data</th>
+      </tr>
+     
+        <% records.forEach(function(record) { %>
+          <tr>
+          <td><%= record.user %></td>  
+          <td><%= JSON.stringify(record.records, null, 4) %></td>
+        </tr>     
+        <% }); %>
+       
+    </table>
+</body>
